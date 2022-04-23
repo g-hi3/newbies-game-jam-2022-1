@@ -1,6 +1,6 @@
 extends Node
 
-export (PackedScene) var Bullet
+onready var weapon_controller = $WeaponController
 
 var speed = 180
 var rigidBody
@@ -20,3 +20,6 @@ func _physics_process(delta):
 		direction.x += 1
 	var velocity = direction * speed * delta
 	rigidBody.set_linear_velocity(velocity)
+	
+	if Input.is_action_pressed("primary_action"):
+		weapon_controller.shoot()
