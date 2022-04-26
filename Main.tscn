@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://PlayerInput.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://plane.tres" type="Shape" id=5]
 [ext_resource path="res://WeaponController.gd" type="Script" id=6]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PauseSingleton.gd" type="Script" id=8]
 
 [sub_resource type="VisualShader" id=1]
 code = "shader_type spatial;
@@ -87,3 +88,6 @@ transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0
 [node name="WeaponController" type="Node" parent="Player"]
 script = ExtResource( 6 )
 StartingWeapon = ExtResource( 7 )
+
+[node name="PauseSingleton" type="Node" parent="."]
+script = ExtResource( 8 )
