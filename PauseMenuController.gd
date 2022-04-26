@@ -4,6 +4,7 @@ var pause_singleton
 
 func _ready():
 	pause_singleton = get_tree().root.get_child(0).get_node("PauseSingleton")
+	get_node("VBoxContainer/Continue Button").grab_focus()
 
 func _on_Continue_Button_pressed():
 	pause_singleton.is_paused = false
