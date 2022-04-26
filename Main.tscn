@@ -50,7 +50,6 @@ albedo_texture = ExtResource( 2 )
 transform = Transform( 8.18405, 0, 0, 0, 1, 0, 0, 0, 7.52657, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = ExtResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
