@@ -5,6 +5,10 @@ export (int) var speed = 200
 onready var weapon_controller = $WeaponController
 
 var velocity = Vector2()
+var pause_singleton
+
+func _ready():
+	pause_singleton = get_tree().root.get_child(0).get_node("PauseSingleton")
 
 func get_input():
 	velocity = Vector2()
@@ -19,10 +23,16 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func _unhandled_input(event):
+	if pause_singleton.is_paused:
+		return
+		
 	if event.is_action_pressed("primary_action"):
 		weapon_controller.shoot()
 
 func _physics_process(delta):
+	if pause_singleton.is_paused:
+		return
+		
 	get_input()
 	velocity = move_and_slide(velocity)
 
