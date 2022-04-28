@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://2D/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://2D/WeaponController.gd" type="Script" id=2]
+[ext_resource path="res://basic_enemy.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 31.0
+
+[node name="Enemy" type="KinematicBody2D"]
+position = Vector2( 490, 250 )
+script = ExtResource( 1 )
+
+[node name="EnemySprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="WeaponController" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="EnemyHand" type="Position2D" parent="."]
+position = Vector2( 36, 0 )

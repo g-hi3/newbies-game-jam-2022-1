@@ -22,3 +22,9 @@ func _physics_process(delta):
 	timer += delta
 	if timer > KILL_TIME:
 		queue_free()
+
+
+func _on_Bullet_body_entered(body: Node):
+	if body.has_method("handle_hit"):
+		body.handle_hit()
+		queue_free()

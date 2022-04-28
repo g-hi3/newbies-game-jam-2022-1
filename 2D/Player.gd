@@ -29,10 +29,15 @@ func _unhandled_input(event):
 	if event.is_action_pressed("primary_action"):
 		weapon_controller.shoot()
 
-func _physics_process(delta):
+func _process(delta):
+	$PlayerCenter.look_at(get_global_mouse_position())
+	
 	if pause_singleton.is_paused:
 		return
-		
+	
+func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
+func handle_hit():
+	print("Player hit") # debug, hit not implemented yet

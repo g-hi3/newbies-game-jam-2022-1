@@ -21,5 +21,7 @@ shape = SubResource( 1 )
 script = ExtResource( 3 )
 StartingWeapon = ExtResource( 4 )
 
-[node name="PlayerHand" type="Position2D" parent="."]
+[node name="PlayerCenter" type="Node2D" parent="."]
+
+[node name="PlayerHand" type="Position2D" parent="PlayerCenter"]
 position = Vector2( 36, 0 )
