@@ -30,7 +30,7 @@ func _unhandled_input(event):
 		weapon_controller.shoot()
 
 func _process(delta):
-	$PlayerCenter.look_at(get_global_mouse_position())
+	$CharCenter.look_at(get_global_mouse_position())
 	
 	if pause_singleton.is_paused:
 		return

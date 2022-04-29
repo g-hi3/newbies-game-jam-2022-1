@@ -6,7 +6,7 @@ var equipped_weapon : Sprite
 
 
 func _ready():
-	hand = get_parent().find_node("PlayerHand")
+	hand = get_parent().find_node("Hand")
 	if StartingWeapon:
 		equip_weapon(StartingWeapon)
 		
