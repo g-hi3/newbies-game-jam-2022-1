@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
+export (int) var speed = 2
 
 onready var weapon_controller = $WeaponController
 
@@ -20,7 +20,8 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+	#velocity = velocity.normalized() * speed
+	move_and_collide(velocity * speed)
 
 func _unhandled_input(event):
 	if pause_singleton.is_paused:

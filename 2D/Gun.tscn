@@ -16,7 +16,6 @@ position = Vector2( 32, 0 )
 
 [node name="WeaponDirection" type="Position2D" parent="."]
 position = Vector2( 37, 0 )
-scale = Vector2( 1, 1 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
